@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>UnitTest - Contact Us</title>
+    <link rel="stylesheet" href="../../lib/qunit/qunit-1.12.0.css">
+
+    <!--
+        credits: http://stackoverflow.com/a/15732622/318574
+    -->
+    <script src="../../lib/qunit/qunit-1.12.0.js"></script>
+    <script src="../../lib/sinon/sinon-1.7.3.js"></script>
+    <script type="text/javascript">
+        //QUnit.config.autoload = false;
+        QUnit.config.autostart = false;
+    </script>
+</head>
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+
+	<script src="../../app/vendor/require/require.js"></script>
+	<script>
+        //console.log('before require.config()');
+
+		require.config({
+			baseUrl: '../../app/',
+			paths: {
+                test: '../test/',
+                text: 'vendor/require/text',
+				jquery: 'vendor/jquery/jquery-2.0.3.min',
+				underscore: 'vendor/underscore/underscore-min',
+				backbone: 'vendor/backbone/backbone-min',
+                backbone_modelbinder: 'vendor/backbone/Backbone.ModelBinder.min',
+                backbone_validation: 'vendor/backbone/backbone-validation-amd-min',
+                backbone_faux_server: 'vendor/backbone/backbone-faux-server',
+                //bootstrap: 'vendor/bootstrap/js/bootstrap.min',
+                bootstrap: 'vendor/bootstrap/js/bootstrap.min',
+			},
+			shim: {
+				backbone: {
+    		        deps: ['underscore', 'jquery'],
+            		exports: 'Backbone'
+		        },
+        		underscore: {
+		            exports: '_'
+        		}
+			}
+		});
+
+        //console.log('after require.config()');
+		//require(['qunit', 'test/contactus/tests', 'phantomjs_bridge'], function(QUnit, tests) {
+		require(['test/contact-us/tests'], function(tests) {
+            //console.log('require tests callback - BEGIN');
+
+       		tests.run();
+			//QUnit.load();
+
+			QUnit.start();
+       	});
+	</script>
+
+    <!--
+    <script src="../../lib/qunit/qunit-1.12.0.js"></script>
+    <script>
+        test( "hello test", function() {
+            ok( 1 == "1", "Passed!" );
+        });
+    </script>
+    -->
+</body>
+</html>
