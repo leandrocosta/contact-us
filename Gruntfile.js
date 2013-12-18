@@ -46,7 +46,6 @@ module.exports = function (grunt) {
                 options: {
                     port: 8888,
                     hostname: '*',
-                    //keepalive: true,
                     base: 'app',
                 }
             },
@@ -60,7 +59,6 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-qunit');
-    //grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
 
