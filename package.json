@@ -2,7 +2,7 @@
   "name": "contact-us",
   "version": "0.0.1",
   "author": "Leandro Costa <leandro.costa@gmail.com>",
-  "description": "A simple demonstration of how to implement a Contact Us dialog using Backbonel.js, Bootstrap, RequireJS and Grunt",
+  "description": "A simple demonstration of how to implement a Contact Us dialog using Backbone.js, Bootstrap, RequireJS and Grunt",
   "repository": {
     "type": "git",
     "url": "git://github.com/leandrocosta/contact-us"
